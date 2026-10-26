@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../fonts/fontsource-nanum-pen-script-5.3.0/package/400.css">
+<style>
+@font-face{font-family:P;font-weight:400;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Regular.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Medium.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-SemiBold.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Bold.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-ExtraBold.woff2)}
+@font-face{font-family:P;font-weight:900;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Black.woff2)}
+:root{
+  --paper:#F4F0E6; --ink:#1B1A18; --muted:#6E6A62; --line:#D9D2C3;
+  --blue:#2343E0; --yellow:#FFE24A; --red:#F0482B; --white:#FFFDF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{word-break:keep-all;background:#999;font-family:P,sans-serif;color:var(--ink);letter-spacing:-0.02em}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 40px;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle,#CFC7B6 1.6px,transparent 1.8px);
+  background-size:36px 36px;background-position:18px 18px;
+  padding:96px 92px 0}
+.slide.blue{background:var(--blue);color:var(--white)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:70px}
+.pill{border:3px solid currentColor;border-radius:999px;padding:10px 26px;font-weight:700;font-size:30px}
+.pg{font-weight:600;font-size:30px;color:var(--muted)}
+.blue .pg{color:#C9D1FF}
+.foot{position:absolute;left:92px;right:92px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:600;color:var(--muted)}
+.blue .foot{color:#C9D1FF}
+.step{font-weight:800;font-size:34px;color:var(--blue);margin-bottom:22px}
+h1{font-weight:900;font-size:96px;line-height:1.16;letter-spacing:-0.045em}
+h2{font-weight:900;font-size:84px;line-height:1.18;letter-spacing:-0.045em;margin-bottom:44px}
+p.body{font-size:40px;line-height:1.55;font-weight:500;margin-bottom:40px}
+p.body b{font-weight:800}
+.hl{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 4px}
+.hlb{background:var(--yellow);color:var(--ink);padding:0 14px;display:inline-block;transform:rotate(-1.2deg)}
+.hand{font-family:'Nanum Pen Script';color:var(--red);font-size:62px;line-height:1.15;letter-spacing:0}
+.card{background:var(--white);border:3px solid var(--ink);border-radius:22px;padding:38px 42px;box-shadow:8px 8px 0 var(--ink)}
+.card h3{font-size:40px;font-weight:800;margin-bottom:18px}
+.card .row{display:flex;gap:22px;align-items:flex-start;padding:20px 0;border-top:2px dashed var(--line)}
+.card .row:first-of-type{border-top:none;padding-top:4px}
+.card .k{font-weight:800;font-size:36px;white-space:nowrap}
+.card .v{font-size:33px;line-height:1.45;color:#3A3833;font-weight:500}
+.tag{display:inline-block;font-size:26px;font-weight:700;background:var(--ink);color:var(--white);border-radius:8px;padding:4px 12px;margin-left:10px;vertical-align:middle}
+.small{font-size:28px;color:var(--muted);line-height:1.5;font-weight:500}
+.note{position:absolute;background:var(--yellow);padding:46px 44px 40px;box-shadow:0 14px 24px rgba(0,0,0,.18)}
+.note::before{content:"";position:absolute;top:-22px;left:50%;width:150px;height:44px;margin-left:-75px;background:rgba(255,255,255,.55);transform:rotate(-4deg)}
+.note .hand{color:var(--ink)}
+svg.doodle{position:absolute;overflow:visible}
+.list{list-style:none}
+.list li{display:flex;align-items:center;gap:28px;font-size:42px;font-weight:700;padding:26px 0;border-bottom:3px solid var(--ink)}
+.list li:last-child{border-bottom:none}
+.list.tight li{padding:18px 0}
+.box{width:54px;height:54px;flex:none}
+.num{font-weight:900;color:var(--blue);font-size:40px;width:64px;flex:none}
+.duo{display:flex;gap:28px}
+.duo .card{flex:1;padding:34px 34px}
+.src{position:absolute;left:92px;right:92px;bottom:124px;font-size:23px;line-height:1.45;color:var(--muted);font-weight:500;border-top:2px solid var(--line);padding-top:14px}
+.src b{font-weight:800;color:var(--ink)}
+.blue .src{color:#C9D1FF;border-color:rgba(255,255,255,.3)}
+.blue .src b{color:#fff}
+.topics{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.tp{background:var(--white);border:3px solid var(--ink);border-radius:20px;padding:30px 32px;box-shadow:6px 6px 0 var(--ink)}
+.tp .tn{font-weight:900;color:var(--blue);font-size:30px}
+.tp .tt{font-weight:900;font-size:50px;letter-spacing:-.04em;margin:4px 0 8px}
+.tp .td{font-size:28px;color:#3A3833;font-weight:500;line-height:1.4}
+#s4 .list li{align-items:flex-start;font-size:42px;line-height:1.35;padding:28px 0}
+#s4 .list .small{font-size:28px;font-weight:500}
+.flow{display:flex;flex-direction:column;gap:6px}
+.fs{background:var(--white);border:3px solid var(--ink);border-radius:18px;padding:22px 30px;font-size:38px;font-weight:700;display:flex;align-items:center;gap:22px}
+.fs b{font-weight:900;color:var(--blue);font-size:38px;width:30px}
+.fs.on{background:var(--yellow)}
+.fa{text-align:center;font-size:32px;font-weight:800;color:var(--muted);line-height:1}
+.bubble{display:flex;flex-direction:column;gap:22px;margin-top:10px}
+.b1,.b2{max-width:78%;font-size:36px;line-height:1.4;font-weight:600;padding:26px 32px;border-radius:30px}
+.b1{background:var(--white);border:3px solid var(--ink);border-bottom-left-radius:6px;align-self:flex-start}
+.b2{background:var(--blue);color:var(--white);border-bottom-right-radius:6px;align-self:flex-end}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide blue" id="s1">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">01 / 07</span></div>
+  <div style="margin-top:100px">
+    <h1 style="font-size:104px">아무도 안 알려줘서<br>사회초년생이<br><span class="hlb">손해 보는 것들</span></h1>
+  </div>
+  <svg class="doodle" style="left:104px;top:820px" width="620" height="40" viewBox="0 0 620 40"><path d="M4 26 C 100 8, 190 34, 290 18 S 470 6, 612 22" fill="none" stroke="#FFE24A" stroke-width="7" stroke-linecap="round"/></svg>
+  <div class="note" style="right:86px;bottom:190px;transform:rotate(4deg);width:460px">
+    <div class="hand" style="font-size:66px">이제 여기서<br>알려줄게!</div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>옆으로 넘겨 →</span></div>
+</section>
+
+<!-- 2 EMPATHY -->
+<section class="slide" id="s2">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">02 / 07</span></div>
+  <h2>다 처음인데<br><span class="hl">물어볼 데가</span> 없었지?</h2>
+  <p class="body">첫 월급, 첫 자취, 첫 계약.<br>검색하면 광고 아니면 카더라뿐이고.</p>
+  <div class="card">
+    <div class="row"><span class="k" style="color:var(--red)">Q</span><span class="v">연말정산, 대체 뭘 챙겨야 해?</span></div>
+    <div class="row"><span class="k" style="color:var(--red)">Q</span><span class="v">전세 계약 전에 뭘 확인해야 해?</span></div>
+    <div class="row"><span class="k" style="color:var(--red)">Q</span><span class="v">교통사고 나면 뭐부터 해야 해?</span></div>
+    <div class="row"><span class="k" style="color:var(--red)">Q</span><span class="v">장례식장에선 뭐라고 말해야 해?</span></div>
+  </div>
+  <div class="hand" style="margin-top:34px;transform:rotate(-2deg)">나만 몰랐던 거 아니야. 다들 몰라!</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 3 TOPICS -->
+<section class="slide" id="s3">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">03 / 07</span></div>
+  <h2>여기서 다룰<br><span class="hl">6가지</span></h2>
+  <div class="topics">
+    <div class="tp"><div class="tn">01</div><div class="tt">돈 관리</div><div class="td">월급 관리, 세금, 연말정산</div></div>
+    <div class="tp"><div class="tn">02</div><div class="tt">집</div><div class="td">청약, 전월세 계약</div></div>
+    <div class="tp"><div class="tn">03</div><div class="tt">보험·사고</div><div class="td">보험 고르기, 사고 대처법</div></div>
+    <div class="tp"><div class="tn">04</div><div class="tt">생활 법률</div><div class="td">알면 손해 안 보는 법 조항</div></div>
+    <div class="tp"><div class="tn">05</div><div class="tt">청년 정책</div><div class="td">지원금, 마감일 알림</div></div>
+    <div class="tp"><div class="tn">06</div><div class="tt">경조사 예절</div><div class="td">장례식장, 결혼식 매너</div></div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 4 PRINCIPLES -->
+<section class="slide" id="s4">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">04 / 07</span></div>
+  <h2>여기 정보는<br><span class="hl">이게 달라</span></h2>
+  <ul class="list">
+    <li><span class="num">01</span><span>공식 원문으로만 확인해<br><span class="small">정부·금융당국 발표, 법령 원문</span></span></li>
+    <li><span class="num">02</span><span>카드마다 출처랑 기준일을 적어<br><span class="small">직접 눌러서 확인할 수 있게</span></span></li>
+    <li><span class="num">03</span><span>특정 상품 가입은 권유 안 해<br><span class="small">보험·대출·투자 상품 영업 없음</span></span></li>
+    <li><span class="num">04</span><span>틀리면 바로 고쳐서 알려줘<br><span class="small">제도가 바뀌면 업데이트 게시물로</span></span></li>
+  </ul>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 5 PROCESS -->
+<section class="slide" id="s5">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">05 / 07</span></div>
+  <h2>솔직히 말하면,<br><span class="hl">AI랑 같이</span> 만들어</h2>
+  <p class="body">AI(Claude)가 공식 자료를 찾고 정리하면<br>사람이 원문과 대조해서 검수해.</p>
+  <div class="flow">
+    <div class="fs"><b>1</b>AI가 공식 원문 리서치</div>
+    <div class="fa">↓</div>
+    <div class="fs"><b>2</b>두 군데 이상 교차 확인</div>
+    <div class="fa">↓</div>
+    <div class="fs"><b>3</b>원문 못 찾은 내용은 삭제</div>
+    <div class="fa">↓</div>
+    <div class="fs on"><b>4</b>사람이 최종 검수 후 업로드</div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 6 ASK -->
+<section class="slide" id="s6">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">06 / 07</span></div>
+  <h2>궁금한 거 있으면<br><span class="hl">댓글로 물어봐</span></h2>
+  <p class="body">공식 자료로 확인해서<br><b>카드뉴스로 답해줄게.</b></p>
+  <div class="small" style="margin-top:6px">예를 들면 이런 식 ↓</div>
+  <div class="bubble">
+    <div class="b1">사회초년생인데 청약통장 지금 만들어도 돼요?</div>
+    <div class="b2">좋은 질문! 확인해서 다음 편으로 정리할게</div>
+  </div>
+  <div class="hand" style="margin-top:44px;transform:rotate(-2deg)">네 질문이 다음 콘텐츠가 될 수도!</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 7 OUTRO -->
+<section class="slide blue" id="s7">
+  <div class="top"><span class="pill">청년 생존노트 시작</span><span class="pg">07 / 07</span></div>
+  <h1 style="font-size:96px;margin-top:40px">손해 보기 전에<br><span class="hlb">먼저 알려줄게</span></h1>
+  <p class="body" style="margin-top:46px;color:#E3E7FF">팔로우해두면 놓치지 않아.<br>첫 월급 받은 친구도 태그해줘.</p>
+  <div class="note" style="left:92px;top:800px;transform:rotate(-3deg);width:640px;padding:36px 40px 32px">
+    <div style="font-weight:800;font-size:28px;margin-bottom:8px;color:var(--ink)">첫 번째 시리즈</div>
+    <div class="hand" style="font-size:58px">사회초년생 보험,<br>순서대로 챙기는 법</div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span></span></div>
+</section>
+
+</body>
+</html>
