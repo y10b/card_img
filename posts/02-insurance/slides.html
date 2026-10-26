@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../fonts/fontsource-nanum-pen-script-5.3.0/package/400.css">
+<style>
+@font-face{font-family:P;font-weight:400;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Regular.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Medium.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-SemiBold.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Bold.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-ExtraBold.woff2)}
+@font-face{font-family:P;font-weight:900;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Black.woff2)}
+:root{
+  --paper:#F4F0E6; --ink:#1B1A18; --muted:#6E6A62; --line:#D9D2C3;
+  --blue:#2343E0; --yellow:#FFE24A; --red:#F0482B; --white:#FFFDF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{word-break:keep-all;background:#999;font-family:P,sans-serif;color:var(--ink);letter-spacing:-0.02em}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 40px;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle,#CFC7B6 1.6px,transparent 1.8px);
+  background-size:36px 36px;background-position:18px 18px;
+  padding:96px 92px 0}
+.slide.blue{background:var(--blue);color:var(--white)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:70px}
+.pill{border:3px solid currentColor;border-radius:999px;padding:10px 26px;font-weight:700;font-size:30px}
+.pg{font-weight:600;font-size:30px;color:var(--muted)}
+.blue .pg{color:#C9D1FF}
+.foot{position:absolute;left:92px;right:92px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:600;color:var(--muted)}
+.blue .foot{color:#C9D1FF}
+.step{font-weight:800;font-size:34px;color:var(--blue);margin-bottom:22px}
+h1{font-weight:900;font-size:96px;line-height:1.16;letter-spacing:-0.045em}
+h2{font-weight:900;font-size:84px;line-height:1.18;letter-spacing:-0.045em;margin-bottom:34px}
+p.body{font-size:40px;line-height:1.55;font-weight:500;margin-bottom:30px}
+p.body b{font-weight:800}
+.hl{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 4px}
+.hlb{background:var(--yellow);color:var(--ink);padding:0 14px;display:inline-block;transform:rotate(-1.2deg)}
+.hand{font-family:'Nanum Pen Script';color:var(--red);font-size:62px;line-height:1.15;letter-spacing:0}
+.card{background:var(--white);border:3px solid var(--ink);border-radius:22px;padding:38px 42px;box-shadow:8px 8px 0 var(--ink)}
+.card h3{font-size:40px;font-weight:800;margin-bottom:18px}
+.card .row{display:flex;gap:22px;align-items:flex-start;padding:20px 0;border-top:2px dashed var(--line)}
+.card .row:first-of-type{border-top:none;padding-top:4px}
+.card .k{font-weight:800;font-size:36px;white-space:nowrap}
+.card .v{font-size:33px;line-height:1.45;color:#3A3833;font-weight:500}
+.tag{display:inline-block;font-size:26px;font-weight:700;background:var(--ink);color:var(--white);border-radius:8px;padding:4px 12px;margin-left:10px;vertical-align:middle}
+.small{font-size:28px;color:var(--muted);line-height:1.5;font-weight:500}
+.note{position:absolute;background:var(--yellow);padding:46px 44px 40px;box-shadow:0 14px 24px rgba(0,0,0,.18)}
+.note::before{content:"";position:absolute;top:-22px;left:50%;width:150px;height:44px;margin-left:-75px;background:rgba(255,255,255,.55);transform:rotate(-4deg)}
+.note .hand{color:var(--ink)}
+svg.doodle{position:absolute;overflow:visible}
+.list{list-style:none}
+.list li{display:flex;align-items:center;gap:28px;font-size:42px;font-weight:700;padding:26px 0;border-bottom:3px solid var(--ink)}
+.list li:last-child{border-bottom:none}
+.list.tight li{padding:18px 0}
+.box{width:54px;height:54px;flex:none}
+.num{font-weight:900;color:var(--blue);font-size:40px;width:64px;flex:none}
+.duo{display:flex;gap:28px}
+.duo .card{flex:1;padding:24px 32px}
+.src{position:absolute;left:92px;right:92px;bottom:124px;font-size:23px;line-height:1.45;color:var(--muted);font-weight:500;border-top:2px solid var(--line);padding-top:14px}
+.src b{font-weight:800;color:var(--ink)}
+.blue .src{color:#C9D1FF;border-color:rgba(255,255,255,.3)}
+.blue .src b{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide blue" id="s1">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">01 / 10</span></div>
+  <div style="margin-top:110px">
+    <h1 style="font-size:118px">보험 들기 전에<br>이 5가지 모르면<br><span class="hlb">매달 돈 샌다</span></h1>
+  </div>
+  <svg class="doodle" style="left:104px;top:836px" width="560" height="40" viewBox="0 0 560 40"><path d="M4 26 C 90 8, 170 34, 260 18 S 430 6, 552 22" fill="none" stroke="#FFE24A" stroke-width="7" stroke-linecap="round"/></svg>
+  <div class="note" style="right:86px;bottom:190px;transform:rotate(4deg);width:500px">
+    <div class="hand" style="font-size:62px">금융위·금감원·법령<br>원문으로 확인했어</div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>옆으로 넘겨 →</span></div>
+</section>
+
+<!-- 2 EMPATHY -->
+<section class="slide" id="s2">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">02 / 10</span></div>
+  <h2 style="font-size:76px">“아는 형이 설계사인데<br>월 15만 원짜리 들래…”</h2>
+  <p class="body">첫 월급 받으면 꼭 이런 연락 오지?<br>근데 보험은 <b>‘많이’</b> 드는 게 아니라<br><span class="hl"><b>‘순서대로’</b> 챙기는 거야.</span></p>
+  <div class="card" style="margin-top:20px">
+    <div class="row"><span class="num">01</span><span class="k">내 보험부터 조회</span></div>
+    <div class="row"><span class="num">02</span><span class="k">실손보험은 1개만</span></div>
+    <div class="row"><span class="num">03</span><span class="k">일상생활배상책임 특약</span></div>
+    <div class="row"><span class="num">04</span><span class="k">보험료 비교 기준</span></div>
+    <div class="row"><span class="num">05</span><span class="k">되돌리는 방법 알아두기</span></div>
+  </div>
+  <div class="hand" style="position:absolute;right:80px;top:560px;transform:rotate(-7deg);text-align:right;font-size:58px">이 순서만 알아도<br>호구 탈출!</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 3 STEP 1 -->
+<section class="slide" id="s3">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">03 / 10</span></div>
+  <div class="step">STEP 01</div>
+  <h2>가입 전에<br><span class="hl">내 보험부터</span> 조회해</h2>
+  <p class="body">부모님이 어릴 때 들어둔 보험이<br>이미 있을 수도 있어.<br>모르고 또 가입하면 <b>보험료만 두 번</b> 나가.</p>
+  <div class="card">
+    <div class="row"><div><div class="k">내보험다보여 <span class="tag">한국신용정보원</span></div><div class="v">내가 가입한 보험의 보장 내역 조회<br><span class="small">(2006년 이후 가입한 생명·손해보험 기준)</span></div></div></div>
+    <div class="row"><div><div class="k">내보험찾아줌 <span class="tag">생명·손해보험협회</span></div><div class="v">계약 내역 + 안 찾아간 ‘숨은 보험금’ 조회</div></div></div>
+  </div>
+  <div class="src"><b>출처</b> 금융감독원 금융상품통합비교공시 ‘내보험 다보여’ 안내 · 정책브리핑 ‘숨은보험금 찾기’(2024.6.20)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 4 STEP 2a -->
+<section class="slide" id="s4">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">04 / 10</span></div>
+  <div class="step">STEP 02</div>
+  <h2>실손보험은<br><span class="hl">딱 1개면 충분</span></h2>
+  <p class="body" style="margin-bottom:34px">병원비를 <b>실제로 낸 만큼</b> 돌려받는 보험.<br>2개 들어도 2배로 안 줘. 보험사끼리<br><b>나눠서</b> 줄 뿐이야. (비례보상)</p>
+  <div class="card">
+    <h3>회사 다니면 이것부터 확인!</h3>
+    <div class="v">회사가 <b>단체실손</b>을 들어줬는데 개인실손도 있다면?<br>→ 둘 중 하나를 <b>중지 신청</b>해서 보험료를 아낄 수 있어.<br><span class="small">(2023년부터 직원 본인도 단체실손 중지 신청 가능)</span></div>
+  </div>
+  <div class="hand" style="margin-top:18px;transform:rotate(-2deg);font-size:56px">인사팀에 “단체보험 있어요?” 물어보기</div>
+  <div class="src"><b>출처</b> 금융감독원 ‘자주 쓰이는 보험용어’(비례보상) · 금융위원회 보도자료 ‘개인·단체실손 중복가입 개선’(2022.12.27)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 5 STEP 2b -->
+<section class="slide" id="s5">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">05 / 10</span></div>
+  <div class="step">STEP 02 · 최신 변경</div>
+  <h2>2026년 5월,<br><span class="hl">5세대 실손</span> 나왔어</h2>
+  <div class="card" style="margin-bottom:32px">
+    <div class="row"><span class="k" style="color:var(--blue);width:44px">↓</span><span class="v">보험료는 4세대보다 <b>약 30% 저렴</b></span></div>
+    <div class="row"><span class="k" style="color:var(--red);width:44px">!</span><span class="v"><b>비중증 비급여</b> 자기부담 입원 50%,<br>통원 50%(최소 5만 원), 연 한도 1,000만 원</span></div>
+    <div class="row"><span class="k" style="color:var(--red);width:44px">✕</span><span class="v">근골격계 물리치료(도수치료 등), 체외충격파,<br>비급여 주사제는 보장 제외</span></div>
+  </div>
+  <p class="small">* 급여 = 건강보험이 적용되는 진료 / 비급여 = 적용 안 되는 진료<br>* 비중증 = 암 같은 중증질환이 아닌 일반 진료</p>
+  <div class="hand" style="position:absolute;right:92px;top:330px;transform:rotate(-6deg);text-align:right;font-size:54px">내 병원 다니는<br>패턴 보고 고르기!</div>
+  <div class="src"><b>출처</b> 금융위원회 보도자료 ‘5세대 실손의료보험 출시’(2026.5.6)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 6 STEP 3 -->
+<section class="slide" id="s6">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">06 / 10</span></div>
+  <div class="step">STEP 03</div>
+  <h2 style="margin-bottom:34px">자취생이면 꼭!<br><span class="hl">일상생활배상책임</span></h2>
+  <p class="body" style="margin-bottom:16px">내 실수로 남에게 피해를 줬을 때<br><b>대신 물어주는</b> 보험이야. 예를 들면 ↓</p>
+  <ul class="list tight" style="margin-bottom:24px">
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>사는 집에서 물이 새서 아랫집 피해</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>자전거 타다 주차된 차를 긁음</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>반려견이 지나가던 사람을 다치게 함</li>
+  </ul>
+  <p class="small">단독 상품보다 상해·화재보험 등에 <b>특약</b>으로 붙어 있어.<br>여러 개 들어도 실제 손해만큼만 나눠서 줘 → 1개면 충분.<br>자기부담금은 상품마다 달라서 약관 확인 필수!</p>
+  <div class="src"><b>출처</b> 금융감독원 웹진 FSSZINE ‘일상생활배상책임보험’ 안내</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 7 STEP 4 -->
+<section class="slide" id="s7">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">07 / 10</span></div>
+  <div class="step">STEP 04</div>
+  <h2>얼마나 들어야<br>할지 <span class="hl">모르겠다면?</span></h2>
+  <p class="body" style="margin-bottom:22px">“월급의 몇 %” 같은 공식 기준은 없어.<br>대신 <b>내 또래랑 비교</b>해 볼 수는 있어.</p>
+  <div class="card" style="margin-bottom:24px">
+    <h3>내보험다보여에서 볼 수 있는 것</h3>
+    <div class="v">· 내 보장 금액 vs <b>같은 성별·연령 평균</b><br>· 실손 중복가입 여부</div>
+  </div>
+  <div class="duo">
+    <div class="card"><h3>갱신형</h3><div class="v">갱신할 때마다<br>보험료가 바뀔 수 있어</div></div>
+    <div class="card"><h3>비갱신형</h3><div class="v">납입 기간 동안<br>보험료가 그대로야</div></div>
+  </div>
+  <div class="src"><b>출처</b> 금융감독원 금융상품통합비교공시 ‘내보험 다보여’ 안내</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 8 STEP 5 -->
+<section class="slide" id="s8">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">08 / 10</span></div>
+  <div class="step">STEP 05</div>
+  <h2 style="margin-bottom:34px">가입했는데 후회되면?<br><span class="hl">되돌릴 수 있어</span></h2>
+  <div class="card" style="margin-bottom:28px;padding:30px 40px">
+    <h3>① 청약철회 <span class="tag">이유 상관없이</span></h3>
+    <div class="v">보험증권 받은 날부터 <b>15일</b>, 청약한 날부터 <b>30일</b><br>중 <b>먼저 끝나는 날까지</b> 철회 가능</div>
+  </div>
+  <div class="card" style="padding:30px 40px">
+    <h3>② 계약 취소 <span class="tag">3개월</span></h3>
+    <div class="v">보험사가 <b>약관을 안 줬거나</b><br><b>중요한 내용을 설명 안 했다면</b><br>계약이 성립한 날부터 3개월 안에 취소 가능</div>
+  </div>
+  <div class="hand" style="margin-top:28px;transform:rotate(-2deg);font-size:56px">약관은 꼭 받아서 보관하기!</div>
+  <div class="src"><b>출처</b> 금융소비자보호법 제46조(청약의 철회) · 상법 제638조의3(보험약관의 교부·설명 의무)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 9 CHECKLIST -->
+<section class="slide" id="s9">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">09 / 10</span></div>
+  <h2>저장해두고<br><span class="hl">하나씩 체크</span>해봐</h2>
+  <div class="card" style="padding:16px 46px">
+  <ul class="list">
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>내보험다보여로 기존 보험 조회</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>회사 단체실손 있는지 확인</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>실손·일상배상은 1개씩만</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>또래 평균 보장과 비교</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>청약철회 기간 기억하기</li>
+  </ul>
+  </div>
+  <svg class="doodle" style="right:70px;top:150px" width="250" height="250" viewBox="0 0 250 250"><path d="M125 18 C 190 14, 236 62, 232 126 C 228 196, 170 236, 112 230 C 52 224, 14 176, 20 118 C 26 62, 70 24, 132 22" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round"/><text x="125" y="140" text-anchor="middle" font-family="Nanum Pen Script" font-size="66" fill="#F0482B" transform="rotate(-10 125 125)">저장 필수</text></svg>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 10 OUTRO -->
+<section class="slide blue" id="s10">
+  <div class="top"><span class="pill">사회초년생 보험 가이드</span><span class="pg">10 / 10</span></div>
+  <h1 style="font-size:92px;margin-top:40px">네 주변에도<br>첫 월급 받은 친구<br><span class="hlb">있지?</span></h1>
+  <p class="body" style="margin-top:46px;color:#E3E7FF">댓글에 친구 태그하고 같이 보자.<br>팔로우하면 다음 편도 바로 볼 수 있어.</p>
+  <div class="note" style="left:92px;top:830px;transform:rotate(-3deg);width:620px;padding:36px 40px 32px">
+    <div style="font-weight:800;font-size:28px;margin-bottom:8px;color:var(--ink)">다음 편 예고</div>
+    <div class="hand" style="font-size:58px">교통사고 났을 때<br>절대 하면 안 되는 말</div>
+  </div>
+  <div class="src" style="bottom:118px">모든 내용은 공식 출처(금융위원회·금융감독원·법령)로 확인했어요. 일반 정보이며 특정 보험 가입을 권유하지 않아요. 보장 내용은 상품·가입 시기마다 다르니 가입 전 약관을 꼭 확인하세요. <b>2026년 10월 기준</b></div>
+  <div class="foot"><span>청년 생존노트</span><span></span></div>
+</section>
+
+</body>
+</html>
