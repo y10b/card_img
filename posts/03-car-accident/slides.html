@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../fonts/fontsource-nanum-pen-script-5.3.0/package/400.css">
+<style>
+@font-face{font-family:P;font-weight:400;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Regular.woff2)}
+@font-face{font-family:P;font-weight:500;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Medium.woff2)}
+@font-face{font-family:P;font-weight:600;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-SemiBold.woff2)}
+@font-face{font-family:P;font-weight:700;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Bold.woff2)}
+@font-face{font-family:P;font-weight:800;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-ExtraBold.woff2)}
+@font-face{font-family:P;font-weight:900;src:url(../../fonts/pretendard-1.3.9/package/dist/web/static/woff2/Pretendard-Black.woff2)}
+:root{
+  --paper:#F4F0E6; --ink:#1B1A18; --muted:#6E6A62; --line:#D9D2C3;
+  --blue:#2343E0; --yellow:#FFE24A; --red:#F0482B; --white:#FFFDF8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{word-break:keep-all;background:#999;font-family:P,sans-serif;color:var(--ink);letter-spacing:-0.02em}
+.slide{width:1080px;height:1350px;position:relative;overflow:hidden;margin:0 0 40px;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle,#CFC7B6 1.6px,transparent 1.8px);
+  background-size:36px 36px;background-position:18px 18px;
+  padding:96px 92px 0}
+.slide.blue{background:var(--blue);color:var(--white)}
+.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:70px}
+.pill{border:3px solid currentColor;border-radius:999px;padding:10px 26px;font-weight:700;font-size:30px}
+.pg{font-weight:600;font-size:30px;color:var(--muted)}
+.blue .pg{color:#C9D1FF}
+.foot{position:absolute;left:92px;right:92px;bottom:64px;display:flex;justify-content:space-between;align-items:center;font-size:28px;font-weight:600;color:var(--muted)}
+.blue .foot{color:#C9D1FF}
+.step{font-weight:800;font-size:34px;color:var(--blue);margin-bottom:22px}
+h1{font-weight:900;font-size:96px;line-height:1.16;letter-spacing:-0.045em}
+h2{font-weight:900;font-size:84px;line-height:1.18;letter-spacing:-0.045em;margin-bottom:34px}
+p.body{font-size:40px;line-height:1.55;font-weight:500;margin-bottom:30px}
+p.body b{font-weight:800}
+.hl{background:linear-gradient(transparent 52%,var(--yellow) 52%,var(--yellow) 90%,transparent 90%);padding:0 4px}
+.hlb{background:var(--yellow);color:var(--ink);padding:0 14px;display:inline-block;transform:rotate(-1.2deg)}
+.hand{font-family:'Nanum Pen Script';color:var(--red);font-size:62px;line-height:1.15;letter-spacing:0}
+.card{background:var(--white);border:3px solid var(--ink);border-radius:22px;padding:38px 42px;box-shadow:8px 8px 0 var(--ink)}
+.card h3{font-size:40px;font-weight:800;margin-bottom:18px}
+.card .row{display:flex;gap:22px;align-items:flex-start;padding:20px 0;border-top:2px dashed var(--line)}
+.card .row:first-of-type{border-top:none;padding-top:4px}
+.card .k{font-weight:800;font-size:36px;white-space:nowrap}
+.card .v{font-size:33px;line-height:1.45;color:#3A3833;font-weight:500}
+.tag{display:inline-block;font-size:26px;font-weight:700;background:var(--ink);color:var(--white);border-radius:8px;padding:4px 12px;margin-left:10px;vertical-align:middle}
+.small{font-size:28px;color:var(--muted);line-height:1.5;font-weight:500}
+.note{position:absolute;background:var(--yellow);padding:46px 44px 40px;box-shadow:0 14px 24px rgba(0,0,0,.18)}
+.note::before{content:"";position:absolute;top:-22px;left:50%;width:150px;height:44px;margin-left:-75px;background:rgba(255,255,255,.55);transform:rotate(-4deg)}
+.note .hand{color:var(--ink)}
+svg.doodle{position:absolute;overflow:visible}
+.list{list-style:none}
+.list li{display:flex;align-items:center;gap:28px;font-size:42px;font-weight:700;padding:26px 0;border-bottom:3px solid var(--ink)}
+.list li:last-child{border-bottom:none}
+.list.tight li{padding:18px 0}
+.box{width:54px;height:54px;flex:none}
+.num{font-weight:900;color:var(--blue);font-size:40px;width:64px;flex:none}
+.duo{display:flex;gap:28px}
+.duo .card{flex:1;padding:24px 32px}
+.src{position:absolute;left:92px;right:92px;bottom:124px;font-size:23px;line-height:1.45;color:var(--muted);font-weight:500;border-top:2px solid var(--line);padding-top:14px}
+.src b{font-weight:800;color:var(--ink)}
+.blue .src{color:#C9D1FF;border-color:rgba(255,255,255,.3)}
+.blue .src b{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- 1 COVER -->
+<section class="slide blue" id="s1">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">01 / 10</span></div>
+  <div style="margin-top:110px">
+    <h1 style="font-size:112px">교통사고 났을 때<br>이 말 한마디로<br><span class="hlb">손해 볼 수 있어</span></h1>
+  </div>
+  <svg class="doodle" style="left:104px;top:836px" width="560" height="40" viewBox="0 0 560 40"><path d="M4 26 C 90 8, 170 34, 260 18 S 430 6, 552 22" fill="none" stroke="#FFE24A" stroke-width="7" stroke-linecap="round"/></svg>
+  <div class="note" style="right:86px;bottom:190px;transform:rotate(4deg);width:520px">
+    <div class="hand" style="font-size:60px">도로교통법·특례법<br>원문으로 확인했어</div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>옆으로 넘겨 →</span></div>
+</section>
+
+<!-- 2 EMPATHY -->
+<section class="slide" id="s2">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">02 / 10</span></div>
+  <h2 style="font-size:80px">“쿵!”<br>머리가 하얘지지?</h2>
+  <p class="body">첫 차 사고는 누구나 당황해.<br>그래서 <b>순서</b>를 미리 외워두는 게<br><span class="hl"><b>제일 큰 보험</b>이야.</span></p>
+  <div class="card" style="margin-top:20px">
+    <div class="row"><span class="num">01</span><span class="k">2차 사고부터 막기</span></div>
+    <div class="row"><span class="num">02</span><span class="k">다친 사람 구호·연락처 교환</span></div>
+    <div class="row"><span class="num">03</span><span class="k">사진으로 증거 남기기</span></div>
+    <div class="row"><span class="num">04</span><span class="k">과실은 말로 정하지 않기</span></div>
+    <div class="row"><span class="num">05</span><span class="k">보험·청구 제도 알아두기</span></div>
+  </div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 3 STEP 1 -->
+<section class="slide" id="s3">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">03 / 10</span></div>
+  <div class="step">STEP 01</div>
+  <h2 style="font-size:76px;margin-bottom:24px">차 안에 있지 말고<br><span class="hl">2차 사고</span>부터 막아</h2>
+  <p class="body" style="margin-bottom:18px">차를 움직일 수 있으면 <b>갓길로</b> 옮기고,<br>못 움직이면 뒤차에 사고를 알려.</p>
+  <div class="card" style="margin-bottom:18px;padding:26px 42px">
+    <div class="row"><span class="num">비</span><span class="v"><b>비상등</b> 켜기</span></div>
+    <div class="row"><span class="num">트</span><span class="v"><b>트렁크</b> 열기</span></div>
+    <div class="row"><span class="num">밖</span><span class="v"><b>가드레일 밖</b>으로 대피</span></div>
+    <div class="row"><span class="num">신</span><span class="v">안전한 곳에서 <b>스마트폰으로 신고</b></span></div>
+  </div>
+  <p class="small">고속도로에선 <b>안전삼각대</b> 설치가 의무, 밤엔 사방 500m에서<br>보이는 적색 섬광신호 등도 함께 설치해.</p>
+  <div class="hand" style="position:absolute;right:92px;top:372px;transform:rotate(-6deg);text-align:right;font-size:54px">줄여서<br>‘비트밖신’!</div>
+  <div class="src"><b>출처</b> 국토교통부(정책브리핑, 2020.9.21) · 한국도로공사(정책브리핑, 2024.7.31) · 도로교통법 제66조 · 시행규칙 제40조</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 4 STEP 2 : MUST NOT SAY 1 -->
+<section class="slide" id="s4">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">04 / 10</span></div>
+  <div class="step">STEP 02 · 하면 안 되는 말 ①</div>
+  <h2 style="font-size:76px">“괜찮아요,<br>그냥 가세요”</h2>
+  <p class="body" style="margin-bottom:26px">사고 낸 운전자는 <b>즉시 멈추고</b><br>다친 사람을 구호하고, <span class="hl"><b>이름·연락처 등</b>을</span><br><span class="hl">알려줄 의무</span>가 있어.</p>
+  <div class="card" style="margin-bottom:24px">
+    <div class="row"><div><div class="k">구호·인적사항 제공 없이 가면</div><div class="v">5년 이하 징역 또는 1,500만 원 이하 벌금</div></div></div>
+    <div class="row"><div><div class="k">주·정차된 차만 긁고 연락처 안 남기면</div><div class="v">20만 원 이하 벌금·구류 또는 과료</div></div></div>
+  </div>
+  <p class="small">사람이 다쳤다면 경찰 신고도 의무야(112·119).<br>차만 부서졌고 위험 막는 조치까지 했다면 신고 의무는 예외.</p>
+  <div class="src"><b>출처</b> 도로교통법 제54조(사고발생 시의 조치) · 제148조 · 제156조 제10호</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 5 STEP 3 PHOTO -->
+<section class="slide" id="s5">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">05 / 10</span></div>
+  <div class="step">STEP 03</div>
+  <h2>차 빼기 전에<br><span class="hl">사진부터</span> 남겨</h2>
+  <p class="body" style="margin-bottom:16px">말은 바뀌어도 사진은 안 바뀌어. ↓</p>
+  <ul class="list tight" style="margin-bottom:24px">
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>멀리서 현장 전체 + 차량 위치</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>가까이서 부딪힌 부위</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>바퀴 방향·노면표시·스키드마크</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/><path d="M13 27 L24 39 L46 10" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>상대 차 블랙박스 유무</li>
+  </ul>
+  <p class="small">바퀴 방향은 누가 어디로 가고 있었는지 보여주는<br>중요한 증거야. 단, 고속도로에선 <b>대피가 먼저!</b></p>
+  <div class="src"><b>출처</b> 손해보험협회 과실비율정보포털 ‘사고 대응 요령’ · 정책브리핑 ‘교통사고 현장 사진 찍는 법’(2018.6.4)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 6 MUST NOT SAY 2 -->
+<section class="slide" id="s6">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">06 / 10</span></div>
+  <div class="step">STEP 04 · 하면 안 되는 말 ②</div>
+  <h2 style="font-size:72px;margin-bottom:26px">“제가 다<br>잘못했어요”</h2>
+  <p class="body" style="margin-bottom:22px">과실비율은 현장 말싸움이 아니라<br>보험사가 <b>‘과실비율 인정기준’</b>으로 따져.<br><span class="hl">보험금·보험료 할증</span>까지 걸린 문제야.</p>
+  <div class="card" style="margin-bottom:22px;padding:26px 40px">
+    <h3>그래서 현장에선</h3>
+    <div class="v">“몇 대 몇” 약속 대신 <b>신호·위치·진행 방향</b> 같은<br><b>사실만</b> 차분히 말하고 기록해.</div>
+  </div>
+  <div class="card" style="padding:26px 40px">
+    <h3>비율이 억울하다면?</h3>
+    <div class="v"><b>과실비율 분쟁심의위원회</b> 심의를 내 보험사를<br>통해 요청할 수 있어. 신청비용은 보험사 부담.</div>
+  </div>
+  <div class="src"><b>출처</b> 금융위원회 보도자료(2018.7.11) · 손해보험협회 과실비율분쟁심의위원회 ‘심의제도 소개’</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 7 SPECIAL ACT -->
+<section class="slide" id="s7">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">07 / 10</span></div>
+  <div class="step">알아두기 · 보험의 힘</div>
+  <h2 style="font-size:76px">종합보험 들었으면<br><span class="hl">처벌 특례</span>가 있어</h2>
+  <p class="body" style="margin-bottom:24px">사람이 다친 사고(사망 제외)라도 종합보험에<br>가입돼 있으면 <b>원칙적으로 공소 제기 불가.</b><br>하지만 <b>이런 경우는 예외</b>야 ↓</p>
+  <div class="card" style="padding:28px 40px">
+    <div class="v" style="font-size:31px;line-height:1.6">신호위반 · 중앙선 침범 · 제한속도 20km/h 초과<br>앞지르기 위반 · 철길건널목 · 횡단보도 보행자 보호 위반<br>무면허 · 음주·약물 · 보도 침범 · 승객 추락방지 위반<br>어린이보호구역 · 화물 고정 위반<br><b>+ 도주(뺑소니) · 음주측정 거부 · 중상해</b></div>
+  </div>
+  <div class="hand" style="margin-top:22px;transform:rotate(-2deg);font-size:54px">이건 보험 있어도 처벌 대상!</div>
+  <div class="src"><b>출처</b> 교통사고처리 특례법 제3조(처벌의 특례) · 제4조(보험 등에 가입된 경우의 특례)</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 8 VICTIM -->
+<section class="slide" id="s8">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">08 / 10</span></div>
+  <div class="step">STEP 05 · 내가 피해자라면</div>
+  <h2 style="font-size:74px;margin-bottom:28px">상대가 미뤄도<br><span class="hl">직접 청구</span>할 수 있어</h2>
+  <div class="card" style="margin-bottom:20px;padding:24px 40px">
+    <h3>① 직접 청구 <span class="tag">자배법 제10조</span></h3>
+    <div class="v">가해자 보험사에 보험금을<br><b>나한테 직접 달라고</b> 청구할 수 있어</div>
+  </div>
+  <div class="card" style="margin-bottom:20px;padding:24px 40px">
+    <h3>② 가불금 <span class="tag">제11조</span></h3>
+    <div class="v">다쳤다면 치료비(자동차보험진료수가)는<br><b>전액 먼저</b> 달라고 청구 가능</div>
+  </div>
+  <div class="card" style="padding:24px 40px">
+    <h3>③ 뺑소니·무보험 차 <span class="tag">제30조</span></h3>
+    <div class="v">정부 보장사업으로 <b>책임보험 한도 안에서</b> 보상</div>
+  </div>
+  <div class="src"><b>출처</b> 자동차손해배상 보장법 제10조 · 제11조 · 제30조</div>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 9 CHECKLIST -->
+<section class="slide" id="s9">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">09 / 10</span></div>
+  <h2>저장해두고<br><span class="hl">사고 나면</span> 꺼내 봐</h2>
+  <div class="card" style="padding:16px 46px">
+  <ul class="list">
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>비상등·트렁크·가드레일 밖·신고</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>다친 사람 있으면 119·112</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>이름·연락처 꼭 주고받기</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>전체·파손·바퀴·블랙박스 사진</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>과실은 말로 약속하지 않기</li>
+    <li><svg class="box" viewBox="0 0 54 54"><path d="M6 8 L48 5 L50 48 L5 50 Z" fill="none" stroke="#1B1A18" stroke-width="4" stroke-linejoin="round"/></svg>내 보험사 번호 미리 저장</li>
+  </ul>
+  </div>
+  <svg class="doodle" style="right:70px;top:150px" width="250" height="250" viewBox="0 0 250 250"><path d="M125 18 C 190 14, 236 62, 232 126 C 228 196, 170 236, 112 230 C 52 224, 14 176, 20 118 C 26 62, 70 24, 132 22" fill="none" stroke="#F0482B" stroke-width="6" stroke-linecap="round"/><text x="125" y="140" text-anchor="middle" font-family="Nanum Pen Script" font-size="66" fill="#F0482B" transform="rotate(-10 125 125)">저장 필수</text></svg>
+  <div class="foot"><span>청년 생존노트</span><span>→</span></div>
+</section>
+
+<!-- 10 OUTRO -->
+<section class="slide blue" id="s10">
+  <div class="top"><span class="pill">교통사고 대처 가이드</span><span class="pg">10 / 10</span></div>
+  <h1 style="font-size:92px;margin-top:40px">이제 막<br>운전 시작한 친구<br><span class="hlb">있지?</span></h1>
+  <p class="body" style="margin-top:46px;color:#E3E7FF">댓글에 친구 태그하고 같이 보자.<br>팔로우하면 다음 편도 바로 볼 수 있어.</p>
+  <div class="note" style="left:92px;top:830px;transform:rotate(-3deg);width:620px;padding:36px 40px 32px">
+    <div style="font-weight:800;font-size:28px;margin-bottom:8px;color:var(--ink)">다음 편 예고</div>
+    <div class="hand" style="font-size:58px">사회초년생<br>연말정산 체크리스트</div>
+  </div>
+  <div class="src" style="bottom:118px">모든 내용은 공식 출처(법령·금융위원회·국토교통부·손해보험협회)로 확인했어요. 일반 정보이며 법률 자문이 아니에요. 실제 사고 처리는 상황마다 다르니 경찰·보험사·변호사 등 전문가와 상담하세요. <b>2026년 10월 기준</b></div>
+  <div class="foot"><span>청년 생존노트</span><span></span></div>
+</section>
+
+</body>
+</html>
